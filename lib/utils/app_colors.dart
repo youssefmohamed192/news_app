@@ -9,5 +9,7 @@ abstract class AppColors{
   static const Color brown = Color(0xffCF7E48);
   static const Color lightBlue = Color(0xff4882CF);
   static const Color yellow = Color(0xffF2D352);
+  static const Color white = Color(0xffFFFFFF);
+  static const Color transparent = Colors.transparent;
 
 }

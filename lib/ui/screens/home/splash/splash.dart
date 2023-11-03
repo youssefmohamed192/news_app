@@ -5,6 +5,8 @@ import 'package:news_app/utils/app_assets.dart';
 class SplashScreen extends StatefulWidget {
   static const String routeName = "splash";
 
+  const SplashScreen({super.key});
+
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
