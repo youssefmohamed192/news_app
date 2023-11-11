@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/ui/screens/home/tabs/Categories/categories_tab.dart';
 import 'package:news_app/ui/screens/home/tabs/news/news_tab.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("News App"),
       ),
-      body: NewsTab(),
+      body: CategoriesTab(),
     );
   }
 }
