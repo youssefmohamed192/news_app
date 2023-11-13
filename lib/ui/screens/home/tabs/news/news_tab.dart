@@ -8,7 +8,8 @@ import 'package:news_app/utils/app_colors.dart';
 import 'package:news_app/utils/app_theme.dart';
 
 class NewsTab extends StatefulWidget {
-  const NewsTab({super.key});
+  final String categoryId;
+  const NewsTab({super.key, required this.categoryId});
 
   @override
   State<NewsTab> createState() => _NewsTabState();
@@ -20,7 +21,7 @@ class _NewsTabState extends State<NewsTab> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: ApiManager.getSources(),
+        future: ApiManager.getSources(widget.categoryId),
         builder: (context, snapShot) {
           if (snapShot.hasData) {
             return buildTabs(snapShot.data!);

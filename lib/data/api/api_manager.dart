@@ -7,9 +7,9 @@ abstract class ApiManager {
   static const String baseUrl = "newsapi.org";
   static const String apiKey = "3d03b8562f86476ab7756e091312ef2c";
 
-  static Future<List<Source>> getSources() async {
+  static Future<List<Source>> getSources(String category) async {
     Uri url =
-        Uri.parse("https://$baseUrl/v2/top-headlines/sources?apiKey=$apiKey");
+        Uri.parse("https://$baseUrl/v2/top-headlines/sources?apiKey=$apiKey&category=$category");
     Response response = await get(url);
     Map json = jsonDecode(response.body);
     SourcesResponse sourcesResponse = SourcesResponse.fromJson(json);

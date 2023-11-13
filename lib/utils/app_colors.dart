@@ -14,4 +14,5 @@ abstract class AppColors{
   static const Color description = Color(0xff42505C);
   static const Color time = Color(0xffA3A3A3);
   static const Color title = Color(0xff79828B);
+  static const Color black = Colors.black;
 }

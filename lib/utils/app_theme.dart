@@ -7,7 +7,7 @@ abstract class AppTheme {
 
   static ThemeData lightTheme = ThemeData(
     appBarTheme: const AppBarTheme(
-        toolbarHeight: 60,
+        toolbarHeight: 66,
         titleTextStyle: appBarTextStyle,
         backgroundColor: AppColors.primary,
         centerTitle: true,

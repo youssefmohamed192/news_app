@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/data/model/category_dm.dart';
+import 'package:news_app/utils/app_colors.dart';
 
 class CategoryWidget extends StatelessWidget {
   final CategoryDM categoryDM;
@@ -23,8 +24,13 @@ class CategoryWidget extends StatelessWidget {
           Image.asset(categoryDM.imagePath,
               height: MediaQuery.of(context).size.height * .14),
           const SizedBox(height: 6),
-          Text(categoryDM.title,style: TextStyle(color: Colors.white),),
-
+          Text(
+            categoryDM.title,
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall!
+                .copyWith(color: AppColors.white),
+          ),
         ],
       ),
     );

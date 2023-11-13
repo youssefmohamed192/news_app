@@ -4,7 +4,9 @@ import 'package:news_app/utils/app_colors.dart';
 import 'package:news_app/widget/category_widget.dart';
 
 class CategoriesTab extends StatelessWidget {
-  const CategoriesTab({super.key});
+  final Function(CategoryDM) onCategoryClick;
+
+  const CategoriesTab({super.key, required this.onCategoryClick});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class CategoriesTab extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium!
-                .copyWith(color: AppColors.accent),
+                .copyWith(color: AppColors.accent, fontWeight: FontWeight.bold),
           ),
           Text(
             "of interest",
@@ -30,19 +32,25 @@ class CategoriesTab extends StatelessWidget {
                 .bodyMedium!
                 .copyWith(color: AppColors.accent),
           ),
-          const SizedBox(height: 28),
+          const SizedBox(height: 24),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: GridView.builder(
                   itemCount: CategoryDM.categories.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 8,
-                    mainAxisSpacing: 8,
-                  ),
-                  itemBuilder: (context, index){
-                    return CategoryWidget(categoryDM: CategoryDM.categories[index],);
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 24,
+                      mainAxisSpacing: 20,
+                      childAspectRatio: 0.8 / 1),
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                        onTap: () {
+                          onCategoryClick(CategoryDM.categories[index]);
+                        },
+                        child: CategoryWidget(
+                          categoryDM: CategoryDM.categories[index],
+                        ));
                   }),
             ),
           )

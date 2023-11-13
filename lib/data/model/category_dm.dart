@@ -21,7 +21,7 @@ class CategoryDM {
         id: "sports", title: "Sports", imagePath: AppAssets.ballImage,
         backgroundColor: AppColors.red, isLeft: true),
     CategoryDM(
-        id: "technology", title: "Technology", imagePath: AppAssets.ballImage,
+        id: "technology", title: "Technology", imagePath: AppAssets.politicsImage,
         backgroundColor: AppColors.blue, isLeft: false),
     CategoryDM(
         id: "health", title: "Health", imagePath: AppAssets.healthImage,
